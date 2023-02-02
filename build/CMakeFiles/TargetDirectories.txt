@@ -1,0 +1,3 @@
+/home/guilherme/GitHub/GYVD/build/CMakeFiles/gyvd.dir
+/home/guilherme/GitHub/GYVD/build/CMakeFiles/edit_cache.dir
+/home/guilherme/GitHub/GYVD/build/CMakeFiles/rebuild_cache.dir
