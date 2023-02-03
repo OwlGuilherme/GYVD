@@ -30,7 +30,6 @@ int main( int argc, char *argv[]){
 
   gtk_main();
 
-
   g_slice_free (widgets_t, widgets);
 
   return 0;
@@ -42,6 +41,7 @@ void on_window_destroy(void){
 
 void on_btn_download_clicked (GtkButton *btn_download, void *data){
     widgets_t *widgets = (widgets_t *)data;
+    const gchar *name = gtk_entry_get_text(GTK_ENTRY (widgets->entry_main));
 
-    printf("Baixando...\n");
+    printf("%s\n", name);
 }
