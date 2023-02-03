@@ -1,7 +1,10 @@
 #include <gtk/gtk.h>
+#include <stdio.h>
 
 typedef struct {
   GtkWidget *window;
+  GtkWidget *btn_download;
+  GtkWidget *entry_main;
 } widgets_t;
 
 int main( int argc, char *argv[]){
@@ -16,6 +19,8 @@ int main( int argc, char *argv[]){
   gtk_builder_add_from_file(builder, "glade/GYVD.glade", NULL);
 
   widgets->window = GTK_WIDGET (gtk_builder_get_object (builder, "window"));
+  widgets->btn_download = GTK_WIDGET(gtk_builder_get_object(builder, "btn_download"));
+  widgets->entry_main = GTK_WIDGET(gtk_builder_get_object(builder, "entry_main"));
 
   gtk_builder_connect_signals(builder, widgets);
 
@@ -33,4 +38,10 @@ int main( int argc, char *argv[]){
 
 void on_window_destroy(void){
   gtk_main_quit();
+}
+
+void on_btn_download_clicked (GtkButton *btn_download, void *data){
+    widgets_t *widgets = (widgets_t *)data;
+
+    printf("Baixando...\n");
 }
