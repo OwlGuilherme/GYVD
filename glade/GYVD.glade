@@ -5,8 +5,8 @@
   <object class="GtkWindow" id="window">
     <property name="can-focus">False</property>
     <property name="title" translatable="yes">GTK YouTube Downloader</property>
-    <property name="default-width">600</property>
-    <property name="default-height">250</property>
+    <property name="default-width">450</property>
+    <property name="default-height">200</property>
     <signal name="destroy" handler="on_window_destroy" swapped="no"/>
     <child>
       <object class="GtkBox">
@@ -17,6 +17,7 @@
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="margin-top">20</property>
             <property name="label" translatable="yes">GTK YouTube Downloader</property>
           </object>
           <packing>
@@ -30,20 +31,22 @@
           <object class="GtkGrid">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="margin-start">20</property>
             <property name="orientation">vertical</property>
             <child>
               <object class="GtkBox">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <child>
-                  <placeholder/>
-                </child>
-                <child>
                   <object class="GtkButton" id="btn_download">
                     <property name="label" translatable="yes">Download</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <property name="margin-start">262</property>
+                    <property name="margin-end">5</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">5</property>
                     <signal name="clicked" handler="on_btn_download_clicked" swapped="no"/>
                   </object>
                   <packing>
@@ -59,9 +62,36 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="entry_main">
+              <object class="GtkBox">
                 <property name="visible">True</property>
-                <property name="can-focus">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-start">35</property>
+                <property name="margin-top">20</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">URL: </property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_main">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="max-length">100</property>
+                    <property name="width-chars">30</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
               </object>
               <packing>
                 <property name="left-attach">0</property>
